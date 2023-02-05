@@ -4,8 +4,6 @@
     <th>Total statement income (artist share + label share)</th>
     <th>Total artist share</th>
     <th>Total label share</th>
-    <th>(Optional) Artist share grouped by track sales</th>
-    <th>(Optional) Artist share grouped by release sales</th>
   </thead>
   <tbody>
     <% @artists.each do |artist| %>
@@ -14,8 +12,6 @@
       <td><%= artist[:full_sum] %></td>
       <td><%= artist[:artist_sum] %></td>
       <td><%= artist[:label_sum] %></td>
-      <td><%= artist[:name] %></td>
-      <td><%= artist[:name] %></td>
     </tr>
     <% end %>
   </tbody>
