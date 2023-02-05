@@ -1,0 +1,15 @@
+<%= form_tag tracks_path, :method => :get do %>
+  <%= select_tag(:artist_id, options_from_collection_for_select(Artist.all, :id, proc {|c| c.name }, {:selected => @artist_id}), include_blank: true) %>
+  <%= select_tag(:release_year, options_for_select(1900..Time.current.year, @release_year), include_blank: true) %>
+  <%= submit_tag 'search' %>
+<% end %>
+<table>
+  <thead><th>Track name</th></thead>
+  <tbody>
+    <% @tracks.each do |track| %>
+    <tr>
+      <td><%= track.name %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
